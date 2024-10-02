@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <!-- Add CSS link for FontAwesome (for icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-image: url('water-image.png'); /* Replace with your image URL */
+            background-size: cover; /* Cover the entire viewport */
+            background-position: center; /* Center the background image */
+            color: white; /* Text color */
+            font-family: Arial, sans-serif; /* Font style */
+            background-attachment: fixed;
+        }
+
+        /* Header styling */
+        header {
+            background-color: #000;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+            header img {
+                height: 50px;
+            }
+
+            header .header-buttons {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+                header .header-buttons button {
+                    background-color: transparent;
+                    border: none;
+                    color: white;
+                    font-size: 20px;
+                    cursor: pointer;
+                }
+
+        .notice-bar {
+            background-color: #f9b233;
+            color: black;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* Unity Game Window styling */
+        .unity-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 120px); /* Deducting header and notice bar */
+        }
+
+        .unity-window {
+            width: 50%;
+            height: 60%;
+            background-color: #000;
+            border: 5px solid #fff;
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        /* Icons for top-right of the game window */
+        .game-icons {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            gap: 10px;
+        }
+
+            .game-icons i {
+                font-size: 18px;
+                color: #fff;
+                cursor: pointer;
+                background-color: rgba(0, 0, 0, 0.5);
+                padding: 5px;
+                border-radius: 50%;
+            }
+
+        /* Footer for the unity window */
+        .game-footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background-color: #fff;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .footer-icons {
+            display: flex;
+            gap: 10px;
+        }
+
+            .footer-icons img {
+                width: 25px;
+                height: 25px;
+            }
+
+        .message-box {
+            flex: 1;
+            padding-left: 10px;
+        }
+
+            .message-box input {
+                width: 100%;
+                padding: 5px;
+                font-size: 14px;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+            }
+    </style>
+</head>
+<body>
+     <!-- Header -->
+    <header>
+        <img src="logo.png" alt="Logo">
+        <div class="header-buttons">
+            <button><i class="fas fa-sign-out-alt"></i></button>
+
+
+        </div>
+    </header>
+
+    <!-- Notice Bar -->
+    <div class="notice-bar">
+        Enjoy The game
+    </div>
+
+    <!-- Unity Game Window Section -->
+    <div class="unity-container">
+        <div class="unity-window">
+           
+            <!-- Unity game iframe or canvas -->
+            <iframe src="https://ocean-pepe-game-xu23.vercel.app/" width="100%" height="100%" frameborder="0"></iframe>
+           
+        </div>
+    </div>
+
+    <script src="GameFunctions.js"></script>
+
+
+</body>
+</html>

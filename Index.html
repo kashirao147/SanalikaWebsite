@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Header</title>
+    <link rel="stylesheet" href="styles.css?v=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="Logo" class="logo">
+        </div>
+
+        <div class="login-container">
+            <div class="text-content">
+                <div class="input-wrapper" style="position: relative;">
+                    <input type="email" id="email" placeholder="E-mail Address" class="email-input">
+                    <div class="error-message" id="emailError">Please enter a valid email address.</div>
+                </div>
+                <div class="text-options">
+                    <a href="#" id="openPopup" class="forgot-free-to-play">Free to Play</a>
+                </div>
+            </div>
+
+            <div class="text-content">
+                <div class="input-wrapper" style="position: relative;">
+                    <input type="password" id="password" placeholder="Password" class="password-input">
+                    <div class="error-message" id="passwordError">Please enter a valid password.</div>
+                </div>
+                <div class="text-options">
+                    <a href="#" id="openForgotPasswordPopup" class="forgot-free-to-play">Forgot your password?</a>
+                </div>
+            </div>
+
+            <div class="text-content">
+                <button class="login-button" onclick="loginWithEmail()">LOGIN</button>
+            </div>
+        </div>
+
+        <div class="social-login">
+            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-icon" onclick="getToken();"><i class="fab fa-google"></i></a>
+        </div>
+    </header>
+
+
+
+
+    <!-- Popup form -->
+    <!-- Create Account Popup Form -->
+    <div id="popupForm" class="popup-form-container createAccount">
+        <div class="popup-form">
+            <span id="closePopup" class="close-popup">&times;</span>
+            <h2>Create Account</h2>
+            <form id="createAccountForm">
+                <!-- Email Input Field with Error Message -->
+                <div class="input-wrapper" style="position: relative;">
+                    <input type="email" id="createAccountEmail" placeholder="E-mail Address" required class="email-input">
+                    <div class="error-message" id="createAccountEmailError">Please enter a valid email address.</div>
+                </div>
+
+                <!-- Password Input Field with Error Message -->
+                <div class="input-wrapper" style="position: relative; margin-top: 15px;">
+                    <input type="password" id="createAccountPassword" placeholder="Password (min 8 letters/numbers)" required class="password-input">
+                    <div class="error-message" id="createAccountPasswordError">Password must be at least 8 characters long.</div>
+                </div>
+
+                <button type="submit" class="submit-button">Join Now</button>
+            </form>
+
+            <!-- New div for success or error message -->
+            <div class="status-message" id="createAccountStatusMessage"></div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- Forgot Password Popup Form -->
+    <div id="forgotPasswordPopup" class="popup-form-container">
+        <div class="popup-form">
+            <span id="closeForgotPasswordPopup" class="close-popup">&times;</span>
+            <h2>Forgot Your Password?</h2>
+            <p style="font-size:smaller;margin-bottom:4px">Please enter your e-mail address that you used to register</p>
+            <form id="forgotPasswordForm">
+                <!-- Email Input Field with Error Message -->
+                <div class="input-wrapper" style="position: relative;">
+                    <input type="email" id="forgotPasswordEmail" placeholder="E-mail Address" class="email-input" required>
+                    <div class="error-message" id="forgotPasswordEmailError">Please enter a valid email address.</div>
+                </div>
+                <button type="submit" class="submit-button">Send</button>
+            </form>
+        </div>
+    </div>
+
+
+
+
+    <!--Lower body-->
+
+    <div class="empty-space">
+
+    </div>
+
+    <div class="main-section">
+
+
+
+        <div class="section">
+            <div class="content-container">
+                <div class="cta-button">
+                    <button class="play-button">PLAY NOW FREE</button>
+                </div>
+                <div class="text-content">
+                    <h2 style="color: #2c2c2c;">JOIN US TODAY</h2>
+                    <p>Are you ready to meet millions of new people, play funny games with them and discover a whole new world?</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="content-container">
+                <div class="cta-button">
+                    <button class="play-button" onclick="getProfileData()">PLAY NOW FREE</button>
+                </div>
+                <div class="text-content">
+                    <h2 style="color: #2c2c2c;">READY TO PLAY?</h2>
+                    <p>Join to Sanalika and play it right away! It is free to play!</p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+    <div class="features-section">
+        <div class="feature">
+            <img src="icon1.png" alt="Tons of Stuff" class="feature-icon">
+            <h3>TONS OF STUFF</h3>
+            <p>Tons of clothes, items and furniture are waiting for your creativity.</p>
+        </div>
+
+        <div class="feature">
+            <img src="icon1.png" alt="Show Your Style" class="feature-icon">
+            <h3>SHOW YOUR STYLE</h3>
+            <p>Combine your clothes and express yourself in a new way of fashion.</p>
+        </div>
+
+        <div class="feature">
+            <img src="icon1.png" alt="Start a Cafe" class="feature-icon">
+            <h3>START A CAFE</h3>
+            <p>Dream of everyone! With the right start, your cafe can easily become a favorite place, even profitable.</p>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <!--Footer body-->
+
+    <footer class="footer">
+        <div class="footer-section">
+            <h3>SANALIKA</h3>
+            <ul>
+                <li><a href="#">Sign In</a></li>
+                <li><a href="#">What's New?</a></li>
+                <li><a href="#">Latest Features</a></li>
+                <li><a href="#">VIP Features</a></li>
+                <li><a href="#">Safety Features</a></li>
+                <li><a href="#">FAQ</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>MORE SANALIKA</h3>
+            <ul>
+                <li><a href="#">Info for Parents</a></li>
+                <li><a href="#">Guides and Rules</a></li>
+                <li><a href="#">Focus Group</a></li>
+                <li><a href="#">Help & Support</a></li>
+            </ul>
+
+        </div>
+        <div class="footer-section">
+            <h3>FOLLOW US</h3>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <h3>DOWNLOAD NOW</h3>
+            <a href="#" class=" fab fa-google" style="color:white">  Sanalika Desktop</a>
+            <!--<img src="google-icon.png" alt="Get it on Google Play">-->
+        </div>
+        <div class="footer-section">
+            <h3>CORPORATE</h3>
+            <ul>
+                <li><a href="#">About Oyun Studyosu</a></li>
+                <li><a href="#">Awards</a></li>
+                <li><a href="#">Social Responsibility Projects</a></li>
+                <li><a href="#">Advertising Projects</a></li>
+                <li><a href="#">Advertising</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+    <script>
+        // Function to open Create Account popup and hide error messages
+        document.getElementById("openPopup").onclick = function () {
+            document.getElementById("popupForm").style.display = "flex";
+
+            // Hide error messages
+            document.getElementById("createAccountEmailError").style.display = 'none';
+            document.getElementById("createAccountPasswordError").style.display = 'none';
+
+            // Clear inputs (optional)
+            document.getElementById("createAccountEmail").value = '';
+            document.getElementById("createAccountPassword").value = '';
+        };
+        document.getElementById("closePopup").onclick = function () {
+            document.getElementById("popupForm").style.display = "none";
+        };
+
+        // Function to open Forgot Password popup and hide error messages
+        document.getElementById("openForgotPasswordPopup").onclick = function () {
+            document.getElementById("forgotPasswordPopup").style.display = "flex";
+
+            // Hide error message
+            document.getElementById("forgotPasswordEmailError").style.display = 'none';
+
+            // Clear input (optional)
+            document.getElementById("forgotPasswordEmail").value = '';
+        };
+        document.getElementById("closeForgotPasswordPopup").onclick = function () {
+            document.getElementById("forgotPasswordPopup").style.display = "none";
+        };
+
+
+
+
+
+
+
+        // JavaScript to handle showing and hiding the error messages
+        document.getElementById('email').addEventListener('blur', function () {
+            const email = this.value;
+            const emailError = document.getElementById('emailError');
+
+            // Simple email validation pattern
+            const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+            if (!email.match(emailPattern)) {
+                emailError.style.display = 'block';
+                setTimeout(() => {
+                    emailError.style.display = 'none';
+                }, 2000); // Hide after 2 seconds
+            }
+        });
+
+        document.getElementById('password').addEventListener('blur', function () {
+            const password = this.value;
+            const passwordError = document.getElementById('passwordError');
+
+            // Password validation - at least 8 characters
+            if (password.length < 8) {
+                passwordError.style.display = 'block';
+                setTimeout(() => {
+                    passwordError.style.display = 'none';
+                }, 2000); // Hide after 2 seconds
+            }
+        });
+
+
+
+
+
+
+        // JavaScript for showing and hiding the error messages in Create Account popup
+
+        document.getElementById('createAccountEmail').addEventListener('blur', function () {
+            const email = this.value;
+            const emailError = document.getElementById('createAccountEmailError');
+
+            // Simple email validation pattern
+            const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+            if (!email.match(emailPattern)) {
+                emailError.style.display = 'block';
+                setTimeout(() => {
+                    emailError.style.display = 'none';
+                }, 2000); // Hide after 2 seconds
+            }
+        });
+
+        document.getElementById('createAccountPassword').addEventListener('blur', function () {
+            const password = this.value;
+            const passwordError = document.getElementById('createAccountPasswordError');
+
+            // Password validation - at least 8 characters
+            if (password.length < 8) {
+                passwordError.style.display = 'block';
+                setTimeout(() => {
+                    passwordError.style.display = 'none';
+                }, 2000); // Hide after 2 seconds
+            }
+        });
+
+
+
+
+
+        // JavaScript for showing and hiding the error messages in Forgot Password popup
+
+        document.getElementById('forgotPasswordEmail').addEventListener('blur', function () {
+            const email = this.value;
+            const emailError = document.getElementById('forgotPasswordEmailError');
+
+            // Simple email validation pattern
+            const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+            if (!email.match(emailPattern)) {
+                emailError.style.display = 'block';
+                setTimeout(() => {
+                    emailError.style.display = 'none';
+                }, 2000); // Hide after 2 seconds
+            }
+        });
+
+
+    </script>
+
+
+
+
+    <!-- Add this to the bottom of your HTML file, before the closing </body> tag -->
+    <script src="https://download.playfab.com/PlayFabClientApi.js"></script> <!-- PlayFab SDK -->
+    <script src="login.js"></script> <!-- Your custom login JavaScript -->
+
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script type="text/javascript" src="https://download.playfab.com/PlayFabClientApi.js"></script>
+
+</body>
+</html>
