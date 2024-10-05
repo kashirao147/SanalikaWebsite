@@ -8,6 +8,26 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="I just scored 300 points in Ocean Pepe!" />
+    <meta property="og:description" content="Can you beat my high score in this awesome game?" />
+    <meta property="og:image" content="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=328,h=330,fit=crop/A1aJrKnLXbIe339J/untitled-design-65-YbNv5opakPUnp0ew.png" />
+    <meta property="og:url" content="https://kashirao147.github.io/SanalikaWebsite/Index.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Ocean Pepe Game" />
+
+    <!-- Facebook App ID (optional, but recommended if you have one) -->
+    <meta property="fb:1875164342977758" content="your-facebook-app-id" />
+
+    <!-- Twitter Meta Tags (if you also want to share on Twitter) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="I just scored 300 points in Ocean Pepe!">
+    <meta name="twitter:description" content="Can you beat my high score in this awesome game?">
+    <meta name="twitter:image" content="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=328,h=330,fit=crop/A1aJrKnLXbIe339J/untitled-design-65-YbNv5opakPUnp0ew.png">
+    <meta name="twitter:url" content="https://kashirao147.github.io/SanalikaWebsite/Index.html">
+
 </head>
 <body>
     <header>
@@ -48,6 +68,17 @@
     </header>
 
 
+    <button onclick="shareOnFacebook()">Share on Facebook</button>
+
+    <script>
+        function shareOnFacebook() {
+            const url = "https://kashirao147.github.io/SanalikaWebsite/Index.html"; // Replace with your page URL
+            window.open(
+                `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
+                '_blank'
+            );
+        }
+    </script>
 
 
     <!-- Popup form -->
